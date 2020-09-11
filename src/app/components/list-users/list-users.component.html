@@ -1,0 +1,37 @@
+<div class="container">
+    <h1>Lista de usuarios</h1>
+    <table id="tusers"  datatable [dtTrigger]="dtTrigger" class="table table-hover table-condensed table-responsive-sm">
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>Nombre</td>
+                <td>ApPaterno</td>
+                <td>ApMaterno</td>
+                <td>Email</td>
+                <td>Password</td>
+                <td>Editar</td>
+                <td>Eliminar</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{user.userId}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.lastname1}}</td>
+                <td>{{user.lastname2}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.password}}</td>
+                <td>
+                    <button class="btn btn-warning" [routerLink]="['/users/edit',user.userId]">
+                        <span class="fas fa-edit"></span>
+                    </button>
+                </td>
+                <td>
+                    <button class="btn btn-danger" (click)="deleteUser(user.userId)">
+                        <span class="fas fa-trash-alt"></span>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

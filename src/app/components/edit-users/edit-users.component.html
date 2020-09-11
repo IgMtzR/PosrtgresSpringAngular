@@ -1,0 +1,23 @@
+<div class="col-md-4 offset-md-4">
+    <div class="card">
+        <div class="body">
+            <h2>Editar Usuario </h2>
+            <form  class="form-group">
+                <label>Nombre</label>
+                <input type="text" name="nombre" [(ngModel)]="user.name" placeholder="Nombre" class="form-control" >
+                <label>Apellido Paterno</label>
+                <input type="text" name="ap1" [(ngModel)]="user.lastname1" placeholder="Apellido Paterno" class="form-control">
+                <label>Apellido Materno</label>
+                <input type="text" name="ap2" [(ngModel)]="user.lastname2" placeholder="Apellido Materno" class="form-control">
+                <label>Email</label>
+                <input type="text" name="email" [(ngModel)]="user.email" placeholder="Email" class="form-control">
+                <label>Password</label>
+                <input type="text" name="pass" [(ngModel)]="user.password" placeholder="Password" class="form-control">
+                
+                <button class="btn btn-success btn-block" (click)=" save()">
+                    Guardar
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
